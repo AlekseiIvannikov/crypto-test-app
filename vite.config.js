@@ -24,6 +24,12 @@ export default defineConfig({
         //   brotliSize: true,
         // }),
     ],
+    test: {
+        environment: 'jsdom',
+        deps: {
+            inline: ['vue-echarts', 'echarts'],
+        },
+    },
     server: {
         port: 3000,
     },
