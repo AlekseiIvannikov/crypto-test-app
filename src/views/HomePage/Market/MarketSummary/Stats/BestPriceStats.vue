@@ -1,23 +1,13 @@
 <template>
-  <div class="stats shadow">
-    <div class="stat place-items-center">
-      <div class="stat-title">Best bid:</div>
-      <div class="stat-value text-sm">{{ price.bestBid }} {{ pairSecondary }}</div>
-    </div>
-
-    <div class="stat place-items-center">
-      <div class="stat-title">Best Offer</div>
-      <div class="stat-value text-sm">{{ price.bestOffer }} {{ pairSecondary }}</div>
-    </div>
-
-    <div class="stat place-items-center">
-      <div class="stat-title">Last Price</div>
-      <div class="stat-value text-sm">{{ price.last }} {{ pairSecondary }}</div>
-    </div>
+  <div class="stats shadow flex flex-col sm:flex-row gap-4 p-4 sm:gap-6 sm:p-6">
+    <Stat title="Best Bid:" :value="`${price.bestBid} ${pairSecondary}`" />
+    <Stat title="Best Bid:" :value="`${price.bestOffer} ${pairSecondary}`" />
+    <Stat title="Best Bid:" :value="`${price.last} ${pairSecondary}`" />
   </div>
 </template>
 
 <script setup lang="ts">
+import Stat from '@/components/UI/Stat.vue';
 import { Nullable } from '@/types/common-types';
 import { Price } from '@/types/dto/market';
 
@@ -26,5 +16,3 @@ defineProps<{
   pairSecondary: Nullable<string>;
 }>();
 </script>
-
-<style scoped></style>

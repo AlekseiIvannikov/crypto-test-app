@@ -1,5 +1,5 @@
 <template>
-  <div class="card bg-base-100 w-5/12 shadow-xl">
+  <div class="card bg-base-100 w-full sm:w-8/12 md:w-6/12 lg:w-5/12 shadow-xl">
     <div class="flex gap-1 align-items-center">
       <div class="mask mask-squircle h-6 w-6">
         <img :src="`data:image/svg+xml;base64,${icon}`" alt="image" />
@@ -62,4 +62,10 @@ function formatPair() {
 }
 </script>
 
-<style scoped></style>
+<style scoped>
+@media (max-width: 700px) {
+  :deep(.stat) {
+    border: none;
+  }
+}
+</style>

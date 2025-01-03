@@ -1,9 +1,9 @@
 <template>
-  <div class="stats shadow">
-    <div class="stat place-items-center">
-      <div class="stat-title">Change:</div>
+  <div class="stats shadow flex flex-col sm:flex-row gap-4 p-4">
+    <div class="stat place-items-center text-center">
+      <div class="stat-title text-xs sm:text-sm">Change:</div>
       <div
-        class="stat-value text-sm"
+        class="stat-value text-sm sm:text-base font-bold"
         :class="{
           'text-green-500': direction === 'Up',
           'text-red-500': direction === 'Down',
@@ -13,9 +13,11 @@
       </div>
     </div>
 
-    <div class="stat place-items-center">
-      <div class="stat-title">Volume:</div>
-      <div class="stat-value text-sm">{{ primaryVolume }} {{ pair?.primary }} / {{ secondaryVolume }} {{ pair?.secondary }}</div>
+    <div class="stat place-items-center text-center">
+      <div class="stat-title text-xs sm:text-sm">Volume:</div>
+      <div class="stat-value text-sm sm:text-base font-bold">
+        {{ primaryVolume }} {{ pair?.primary }} / {{ secondaryVolume }} {{ pair?.secondary }}
+      </div>
     </div>
   </div>
 </template>
