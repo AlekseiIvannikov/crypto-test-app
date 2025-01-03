@@ -80,5 +80,5 @@ module.exports = {
       },
     ],
   },
-  ignorePatterns: ['dist/', 'node_modules/', 'build/', '.eslintrc.cjs', 'vite.config.js', 'tailwind.config.js'],
+  ignorePatterns: ['dist/', 'node_modules/', 'build/', '.eslintrc.cjs', 'vite.config.js', 'tailwind.config.js', 'postcss.config.js'],
 };

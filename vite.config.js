@@ -24,6 +24,9 @@ export default defineConfig({
         //   brotliSize: true,
         // }),
     ],
+    css: {
+        postcss: './postcss.config.js',
+    },
     test: {
         environment: 'jsdom',
         deps: {
