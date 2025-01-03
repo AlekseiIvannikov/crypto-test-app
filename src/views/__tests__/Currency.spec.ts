@@ -1,6 +1,7 @@
 import { mount } from '@vue/test-utils';
 import { createPinia, defineStore } from 'pinia';
 import { describe, it, expect } from 'vitest';
+import { ComponentPublicInstance } from 'vue';
 
 import { Direction } from '@/types/table';
 
@@ -42,7 +43,7 @@ describe('Currencies Component', () => {
       },
     });
 
-    await wrapper.vm.$nextTick();
+    await (wrapper.vm as ComponentPublicInstance).$nextTick();
 
     expect(wrapper.find('h1').text()).toBe('Currencies');
     expect(wrapper.findComponent(SortDownIcon).exists()).toBe(true);
@@ -62,7 +63,7 @@ describe('Currencies Component', () => {
     const currenciesStore = useMockCurrenciesStore();
 
     await wrapper.findComponent(SortUpIcon).trigger('click');
-    await wrapper.vm.$nextTick();
+    await (wrapper.vm as ComponentPublicInstance).$nextTick();
 
     expect(currenciesStore._currencies.value[0].sort_order).toBe(2);
     expect(currenciesStore._currencies.value[1].sort_order).toBe(1);
