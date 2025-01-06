@@ -1,8 +1,8 @@
 <template>
   <div class="stats shadow flex flex-col sm:flex-row gap-4 p-4 sm:gap-6 sm:p-6">
     <Stat title="Best Bid:" :value="`${price.bestBid} ${pairSecondary}`" />
-    <Stat title="Best Bid:" :value="`${price.bestOffer} ${pairSecondary}`" />
-    <Stat title="Best Bid:" :value="`${price.last} ${pairSecondary}`" />
+    <Stat title="Best Offer:" :value="`${price.bestOffer} ${pairSecondary}`" />
+    <Stat title="Last price:" :value="`${price.last} ${pairSecondary}`" />
   </div>
 </template>
 
